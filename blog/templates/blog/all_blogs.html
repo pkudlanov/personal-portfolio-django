@@ -1,0 +1,9 @@
+<h1>A Blog to Rule All Blogs</h1>
+
+<h3>A humble collection of blog posts by Pavel Kudlanov himself</h3>
+
+{% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <h5>{{ post.date }}</h5>
+    <p>{{ post.body }}</p>
+{% endfor %}
