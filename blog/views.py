@@ -3,7 +3,7 @@ from .models import Post
 
 
 def all_posts(request):
-    posts = Post.objects.order_by('-id')[:5]
+    posts = Post.objects.order_by('-id')
     return render(request, 'blog/all_posts.html', {'posts': posts})
 
 

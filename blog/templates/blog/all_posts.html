@@ -2,8 +2,10 @@
 
 <h3>A humble collection of blog posts by Pavel Kudlanov himself</h3>
 
+<h2>Pavlik has written {{ posts.count }} blog entr{{ posts.count|pluralize:'y,ies' }}.</h2>
+
 {% for post in posts %}
     <a href="{% url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
-    <h5>{{ post.date }}</h5>
-    <p>{{ post.body }}</p>
+    <h5>{{ post.date|date:'F j, Y'}}</h5>
+    <p>{{ post.body|striptags|truncatechars:100 }}</p>
 {% endfor %}
