@@ -1,5 +1,11 @@
-<h1>{{ post.title }}</h1>
+{% extends 'portfolio/base.html' %}
 
-<h2>--{{ post.date|date:'F jS, Y' }}--</h2>
+{% load static %}
 
-<p>{{ post.body|safe }}</p>
+{% block content %}
+    <h1 class="text-center mt-5" id="blogdetailtitle">{{ post.title }}</h1>
+
+    <h5 class="text-center text-muted mb-5">{{ post.date|date:'F jS, Y' }}</h5>
+
+    <p>{{ post.body|safe }}</p>
+{% endblock content %}

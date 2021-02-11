@@ -1,11 +1,21 @@
-<h1>A Blog to Rule All Blogs</h1>
+{% extends 'portfolio/base.html' %}
 
-<h3>A humble collection of blog posts by Pavel Kudlanov himself</h3>
+{% load static %}
 
-<h2>Pavlik has written {{ posts.count }} blog entr{{ posts.count|pluralize:'y,ies' }}.</h2>
+{% block content %}
+    <h1 id="blogtitle" class="font-weight-bold text-center">A Blog to Rule All Blogs</h1>
+    <h3 class="text-center mb-5">A humble collection of thoughts and ponderings on what makes the internet tick.</h3>
 
-{% for post in posts %}
-    <a href="{% url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
-    <h5>{{ post.date|date:'F j, Y'}}</h5>
-    <p>{{ post.body|striptags|truncatechars:100 }}</p>
-{% endfor %}
+
+    {% for post in posts %}
+        <div class="row justify-content-center my-3">
+            <div class="col-md-10">
+            </div>
+        </div>
+        <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
+            <h2 class="fw-ligher">{{ post.title }}</h2>
+        </a>
+        <h5 class="text-muted">{{ post.date|date:'F j, Y'}}</h5>
+        <h4>{{ post.body|striptags|truncatechars:100 }}</h4>
+    {% endfor %}
+{% endblock content %}
