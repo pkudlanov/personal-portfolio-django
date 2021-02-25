@@ -1,21 +1,33 @@
-{% extends 'portfolio/base.html' %}
-
+{% extends 'portfolio/blog_base.html' %}
 {% load static %}
 
 {% block content %}
-    <h1 id="blogtitle" class="font-weight-bold text-center">A Blog to Rule All Blogs</h1>
-    <h3 class="text-center mb-5">A humble collection of thoughts and ponderings on what makes the internet tick.</h3>
+    <div class="container">
+        <h1 id="blogtitle" class="">A Blog to Rule All Blogs</h1>
+        <h3 class="mb-5">A humble collection of thoughts and ponderings on what makes the internet tick.</h3>
+    </div>
 
+    <div class="post-container">
+        {% for post in posts %}
+            <div class="post row my-0 py-0">
 
-    {% for post in posts %}
-        <div class="row justify-content-center my-3">
-            <div class="col-md-10">
+                <div class="p-4 col-10">
+                    <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
+                        <h2 class="fs-1">{{ post.title|upper }}</h2>
+                    </a>
+                    <p class="post-body lh-lg">{{ post.body|striptags|truncatechars:300 }}</p>
+                </div>
+
+                <div class="position-relative post-day col-2 text-center">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'M'|upper }}</h3>
+                        <h2 class="my-0 lh-1 fs-1">{{ post.date|date:'d' }}</h2>
+                        <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'Y' }}</h3>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
-            <h2 class="fw-ligher">{{ post.title }}</h2>
-        </a>
-        <h5 class="text-muted">{{ post.date|date:'F j, Y'}}</h5>
-        <h4>{{ post.body|striptags|truncatechars:100 }}</h4>
-    {% endfor %}
+        {% endfor %}
+    </div>
+
 {% endblock content %}
