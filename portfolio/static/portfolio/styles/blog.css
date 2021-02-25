@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(37, 37, 37);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white
+}
+
+h2 {
+    color: #eca762;
+    font-weight: 100;
+}
+
+h3 {
+    /* font-size: 1.2em; */
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+a:hover * {
+    color: #e78e36;
+    font-weight: 200;
+}
+
+.post {
+    min-height: 10em;
+    border-bottom: 1px solid rgb(51, 51, 51);
+}
+
+.post-day {
+    background-color: rgb(30, 30, 30);
+}
+
+.date-container {
+    width: 3em;
+}
