@@ -4,14 +4,16 @@
 {% block content %}
     <div class="container">
         <h1 id="blogtitle" class="">A Blog to Rule All Blogs</h1>
-        <h3 class="mb-5">A humble collection of thoughts and ponderings on what makes the internet tick.</h3>
+        <h3 class="mb-5">A humble collection of thoughts and ponderings on what makes the internet tick</h3>
     </div>
 
+
     <div class="post-container">
+        <div class="post-line row my-0 px-0 "></div>
         {% for post in posts %}
             <div class="post row my-0 py-0">
 
-                <div class="p-4 col-10">
+                <div class="post-body-container col-10">
                     <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
                         <h2 class="fs-1">{{ post.title|upper }}</h2>
                     </a>
