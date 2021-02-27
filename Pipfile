@@ -11,6 +11,8 @@ pytz = "*"
 sqlparse = "*"
 Django = "*"
 Pillow = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
