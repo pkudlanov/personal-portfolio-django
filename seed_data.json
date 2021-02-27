@@ -537,14 +537,6 @@
     },
     {
         "model": "contenttypes.contenttype",
-        "pk": 7,
-        "fields": {
-            "app_label": "portfolio",
-            "model": "project"
-        }
-    },
-    {
-        "model": "contenttypes.contenttype",
         "pk": 8,
         "fields": {
             "app_label": "blog",
