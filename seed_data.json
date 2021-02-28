@@ -473,8 +473,8 @@
         "model": "auth.user",
         "pk": 1,
         "fields": {
-            "password": "pbkdf2_sha256$180000$R4Elmbn87Xux$98uj59dGIZpw1sT1MzdiIfN232JENHu6w4FuM8qMxSA=",
-            "last_login": "2021-02-11T06:43:36.533Z",
+            "password": "pbkdf2_sha256$216000$YrLXScyicFVc$esU7LbrXn5IOzbibxdVWmRTAaT7fwtFD9ox/sWLnwy4=",
+            "last_login": "2021-02-27T05:05:17.667Z",
             "is_superuser": true,
             "username": "pkudlanov",
             "first_name": "",
@@ -533,6 +533,14 @@
         "fields": {
             "app_label": "sessions",
             "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "portfolio",
+            "model": "project"
         }
     },
     {
