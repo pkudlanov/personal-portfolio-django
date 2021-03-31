@@ -20,6 +20,7 @@ body {
     z-index: 100; /* Behind the navbar */
     background-color: rgb(30, 30, 30);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    overflow-y: scroll;
 }
 
 @media (max-width: 767.98px) {
