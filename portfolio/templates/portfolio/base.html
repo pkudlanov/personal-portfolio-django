@@ -11,6 +11,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'portfolio/styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/blog-detail.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/styles/dashboard.css' %}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 
     <link rel="icon" type="image/png" href="{% static 'portfolio/assets/recursion.png' %}">
 
@@ -18,7 +25,7 @@
 </head>
 
 <body>
-    <nav id="topNav" class="navbar navbar-expand-md navbar-light mb-3">
+    <!-- <nav id="topNav" class="navbar navbar-expand-md navbar-light mb-3">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'portfolio/assets/recursion.png' %}" width="30" height="30" class="d-inline-block align-top" alt="Pavel's Logo">
@@ -44,11 +51,12 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-    <div class="container">
-        {% block content %}{% endblock content %}
-    </div>
+    <!-- Menu not on base template because planning on having a different
+    menu on the blog and main site in the future -->
+
+    {% block content %}{% endblock content %}
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
