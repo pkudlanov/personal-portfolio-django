@@ -36,16 +36,16 @@
     width: 100%;
 }
 
+/* #home-section .arrow-down {
+    color: #e6cc48;
+} */
+
 #home-section .bounce {
     animation: bounce 1.6s infinite;
     animation-timing-function: ease;
 }
-  
-  @keyframes bounce {
-    0%, 100%{
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
+
+    @keyframes bounce {
+        0%, 100% {transform: translateY(0);}
+        50% { transform: translateY(-15px);}
 }

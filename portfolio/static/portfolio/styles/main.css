@@ -56,15 +56,30 @@ a:hover * {
     text-align: center;
     transform: rotate(45deg);
     color: white;
-    background-color: #026ccf;
+    background-color: #88aa33;
     z-index: 500;
     padding-top: 2px;
+    transition: .3s;
 }
 
 .blog-banner:hover {
-    background-color: #2d7ac2;
+    transition: opacity;
+    background-color: #9bbb4b;
+    transition: .3s;
 }
 
 .blog-banner h4 {
     display: inline;
+}
+
+.color-o {
+    color: #e78e36;
+}
+
+.color-g {
+    color: #88aa33;
+}
+
+.color-y {
+    color: #e6cc48;
 }
