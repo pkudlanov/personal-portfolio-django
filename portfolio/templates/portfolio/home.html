@@ -122,40 +122,70 @@
     </nav>
 
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 pt-0 my-0 py-0">
-        <div class="row justify-content-center my-3">
-            <div class="col-5">
-            <img src="{% static 'portfolio/assets/my-portrait.jpg' %}" class="img-fluid">
-            </div>
-        </div>
-    
-        <div class="row justify-content-center mb-3">
-            <div class="col-md-9 text-center">
-                <h1 id="hometext" class="font-weight-bold">Pavel Kudlanov</h1>
-                <h2 class="font-weight-bold">A firm believer in that software does not write itself. Each line of code ultimately has a piece of someone's mind behind it. 😄</h2>
-            </div>
-        </div>
-    
-        <h2 class="mt-5">Portfolio</h2>
-        <hr>
-    
-        <div class="row">
-            {% for project in projects %}
-                <div class="col-lg-4 col-md-6">
-                    {% if project.url %}
-                        <a href="{{ project.url }}">
-                            <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
-                        </a>
-                    {% else %}
-                        <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
-                    {% endif %}
-    
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
+    <main class="col-md-9 ms-sm-auto col-lg-10 pt-0 my-0 py-0 px-0">
+
+        <!-- HOME TOP SECTION -->
+        <div id="home-section" class="section position-relative">
+            <div class="banner mb-5">
+                <div class="overlay position-relative">
+                    <div class="profile-pic position-absolute top-100 translate-middle-y ms-5"></div>
                 </div>
-            {% endfor %}
-    
+            </div>
+
+            <br><br>
+
+            <div class="blog-banner-container position-absolute top-0 start-0">
+                <div class="blog-banner-rotate">
+                    <h4 class="fs-4 text-light" href="{% url 'blog:all_posts' %}"><b>BLOG</b></h4>
+                </div>
+            </div>
+
+            <div class="text-part row justify-content-center mb-3">
+                <div class="col-md-9 text-center">
+                    <h1 id="hometext" class="font-weight-bold">Pavel Kudlanov</h1>
+                    <h2>Full-Stack Software Developer</h2>
+                    <h4 class="font-weight-bold mt-5 quote"><em>A firm believer in that software does not write itself. Each line of code ultimately has a piece of someone's mind behind it. </em>😄</h4>
+                </div>
+            </div>
         </div>
+    
+
+        <!-- PROJECTS SECTION -->
+        <div id="projects-section" class="section">
+            <h2 class="mt-5">Portfolio</h2>
+            <hr>
+        
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-lg-4 col-md-6">
+                        {% if project.url %}
+                            <a href="{{ project.url }}">
+                                <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
+                            </a>
+                        {% else %}
+                            <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
+                        {% endif %}
+        
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                {% endfor %}
+        
+            </div>
+        </div>
+
+
+        <!-- ABOUT SECTION -->
+        <div id="about-section" class="section">
+
+        </div>
+
+
+        <!-- CONTACT SECTION -->
+        <div id="contact-section" class="section">
+
+        </div>
+
     </main>
 </div>
 </div>

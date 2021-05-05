@@ -1,3 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(37, 37, 37);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+a:hover * {
+    color: #e78e36;
+    font-weight: 200;
+}
+
+.funny-link .sunglasses {
+    display: none;
+}
+.funny-link:hover .smile,
+.funny-link:active .smile {
+    display: none;
+}
+.funny-link:hover .sunglasses,
+.funny-link:active .sunglasses {
+    display: inline-block;
+}
+
 .navbar-nav .nav-link {
     color: rgba(0, 0, 0, 1) !important;
 }

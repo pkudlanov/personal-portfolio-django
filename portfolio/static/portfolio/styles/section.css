@@ -1,0 +1,66 @@
+.section {
+    height: 100vh;
+}
+
+#home-section .banner {
+    height: 45vh;
+    width: 100%;
+    background-image: url('/static/portfolio/assets/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home-section .overlay {
+    background-color: rgba(0, 0, 0, 0.637);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#home-section .profile-pic {
+    background-image: url('/static/portfolio/assets/my-portrait.jpg');
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+#home-section .quote {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#home-section .blog-banner-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#home-section .blog-banner-rotate {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: -120px;
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transform: rotate(45deg);
+    color: white;
+    background-color: #026ccf;
+    z-index: 500;
+    padding-top: 2px;
+}
+
+#home-section .blog-banner-rotate:hover {
+    background-color: #2d7ac2;
+}
+
+#home-section .blog-banner-container h4 {
+    display: inline;
+}
+
+#home-section .text-part {
+    width: 100%;
+}
