@@ -41,11 +41,12 @@
 } */
 
 #home-section .bounce {
-    animation: bounce 1.6s infinite;
-    animation-timing-function: ease;
+    animation: bounce .8s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
 }
 
     @keyframes bounce {
-        0%, 100% {transform: translateY(0);}
-        50% { transform: translateY(-15px);}
+        from { transform: translateY(0); }
+        to { transform: translateY(15px); }
 }
