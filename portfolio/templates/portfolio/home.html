@@ -124,9 +124,11 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 my-0 py-0 position-relative">
         
         <!-- BLOG BANNER -->
-        <div class="blog-banner">
-            <h4 class="fs-4 text-light" href="{% url 'blog:all_posts' %}"><b>BL<span class="color-y">O</span>G</b></h4>
-        </div>
+        <a href="{% url 'blog:all_posts' %}">
+            <div class="blog-banner">
+                <h4 class="fs-4 text-light"><b>BL<span class="color-y">O</span>G</b></h4>
+            </div>
+        </a>
         
         <!-- HOME TOP SECTION -->
         <div id="home-section" class="section position-relative">
