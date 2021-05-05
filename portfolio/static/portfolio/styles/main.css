@@ -44,3 +44,27 @@ a:hover * {
         font-size: 4rem;
     }
 }
+
+.blog-banner {
+    display: block;
+    position: fixed;
+    top: 50px;
+    right: -120px;
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transform: rotate(45deg);
+    color: white;
+    background-color: #026ccf;
+    z-index: 500;
+    padding-top: 2px;
+}
+
+.blog-banner:hover {
+    background-color: #2d7ac2;
+}
+
+.blog-banner h4 {
+    display: inline;
+}
