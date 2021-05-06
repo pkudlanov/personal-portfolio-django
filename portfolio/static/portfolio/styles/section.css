@@ -50,3 +50,42 @@
         from { transform: translateY(0); }
         to { transform: translateY(15px); }
 }
+
+#portfolio-section .project-card {
+    --bs-aspect-ratio: 63%;
+}
+
+#portfolio-section .project-overlay {
+    background-color: rgba(0, 0, 0, 0.76);
+}
+
+#portfolio-section .project-header {
+    background-color: #202124;
+    height: 1.8em;
+}
+
+
+#portfolio-section .color-dot {
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+}
+
+#portfolio-section .color-dot-r {
+    margin-left: 1em;
+    background-color: #fc605c;
+}
+
+#portfolio-section .color-dot-y {
+    margin-left: 2.3em;
+    background-color: #fcbb40;
+}
+
+#portfolio-section .color-dot-g {
+    margin-left: 3.6em;
+    background-color: #34c648;
+}
+
+#portfolio-section .color-menu {
+    background-color: #eeeeee;
+}

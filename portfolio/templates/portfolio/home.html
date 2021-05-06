@@ -147,9 +147,9 @@
                 </div>
             </div>
 
-            <h1 class="bounce text-center position-absolute bottom-0 start-50 translate-middle-x pb-5">
+            <h1 class="bounce text-center position-absolute bottom-0 start-50 translate-middle-x pb-3">
                 <svg class="bi color-y" width="28" height="28" fill="none" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round">
-                    <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#bi-chevron-double-down"/>
+                    <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#chevron-double-down"/>
                 </svg>
             </h1>
 
@@ -157,26 +157,71 @@
     
 
         <!-- PROJECTS SECTION -->
-        <div id="projects-section" class="section">
-            <h2 class="mt-5">Portfolio</h2>
-            <hr>
-        
-            <div class="row">
-                {% for project in projects %}
-                    <div class="col-lg-4 col-md-6">
-                        {% if project.url %}
+        <div id="portfolio-section" class="section">
+            <section class="py-5 text-center container">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1>Web Developer Portfolio</h1>
+                    <p class="lead">Just a small collection of various projects I've done.</p>
+                </div>
+            </section>
+
+            <div class="album py-5">
+                <div class="container g-5">
+
+                    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 g-3">
+                    
+                        {% for project in projects %}
+                        
+                            {% if project.url %}
+                            
                             <a href="{{ project.url }}">
-                                <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
+                            <div class="col">
+                                <div class="card text-white shadow-sm ratio project-card">
+                                    <img src="{{ project.image.url }}" class="card-img project-img" alt="Image of one of Pavels Projects.">
+                                    <div class="card-img-overlay project-overlay p-0">
+                                        <div class="project-header rounded ratio p-0">
+                                            <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
+                                            <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
+                                            <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
+                                            <h5 class="text-center text-light m-1">Project Title</h5>
+                                        </div>
+                                        <div class="project-body m-4">
+                                            <h5 class="card-title">{{ project.title }}</h5>
+                                            <p class="card-text">{{ project.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
                             </a>
-                        {% else %}
-                            <img src="{{ project.image.url }}" class="img-fluid mb-2" alt="One of Pavels portfolio projects">
-                        {% endif %}
+
+                            {% else %}
+
+                            <div class="col">
+                                <div class="card text-white shadow-sm ratio project-card">
+                                    <img src="{{ project.image.url }}" class="card-img project-img" alt="Image of one of Pavels Projects.">
+                                    <div class="card-img-overlay project-overlay p-0">
+                                        <div class="project-header rounded ratio p-0">
+                                            <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
+                                            <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
+                                            <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
+                                            <h5 class="text-center text-light m-1">Project Title</h5>
+                                        </div>
+                                        <div class="project-body m-4">
+                                            <h5 class="card-title">{{ project.title }}</h5>
+                                            <p class="card-text">{{ project.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+
+                        {% endfor %}
         
-                        <h3>{{ project.title }}</h3>
-                        <p>{{ project.description }}</p>
                     </div>
-                {% endfor %}
-        
+
+                </div>
             </div>
         </div>
 
