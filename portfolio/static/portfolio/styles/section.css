@@ -1,5 +1,6 @@
 .section {
     height: 100vh;
+    min-height: 550px;
 }
 
 #home-section .banner {

@@ -147,7 +147,12 @@
                 </div>
             </div>
 
-            <h1 class="bounce text-center position-absolute bottom-0 start-50 translate-middle-x pb-3">
+            <h1 class="bounce text-center position-absolute bottom-0 start-0 pb-3 ps-3">
+                <svg class="bi color-y" width="28" height="28" fill="none" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round">
+                    <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#chevron-double-down"/>
+                </svg>
+            </h1>
+            <h1 class="bounce text-center position-absolute bottom-0 end-0 pb-3 pe-3">
                 <svg class="bi color-y" width="28" height="28" fill="none" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round">
                     <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#chevron-double-down"/>
                 </svg>
@@ -197,7 +202,7 @@
                         {% for project in projects %}
                         
                             {% if project.url %}
-                            
+
                             <a href="{{ project.url }}">
                             <div class="col">
                                 <div class="card text-white shadow-sm ratio project-card">
