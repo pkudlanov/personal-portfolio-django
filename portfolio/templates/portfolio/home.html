@@ -158,10 +158,34 @@
 
         <!-- PROJECTS SECTION -->
         <div id="portfolio-section" class="section">
-            <section class="py-5 text-center container">
+            <section class="text-center container p-3 pt-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1>Web Developer Portfolio</h1>
                     <p class="lead">Just a small collection of various projects I've done.</p>
+                </div>
+            </section>
+
+            <section class="container text-center p-3">
+                <h3>Technologies</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">Jajascript</h6>
+                    </div>
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">Python</h6>
+                    </div>
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">NodeJS</h6>
+                    </div>
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">MongoDB</h6>
+                    </div>
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">Firebase</h6>
+                    </div>
+                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                        <h6 class="m-1 px-1">PostgreSQL</h6>
+                    </div>
                 </div>
             </section>
 
@@ -169,7 +193,7 @@
                 <div class="container g-5">
 
                     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 g-3">
-                    
+
                         {% for project in projects %}
                         
                             {% if project.url %}
@@ -179,15 +203,29 @@
                                 <div class="card text-white shadow-sm ratio project-card">
                                     <img src="{{ project.image.url }}" class="card-img project-img" alt="Image of one of Pavels Projects.">
                                     <div class="card-img-overlay project-overlay p-0">
-                                        <div class="project-header rounded ratio p-0">
+                                        <div class="project-header rounded-top ratio p-0">
                                             <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
                                             <h5 class="text-center text-light m-1">Project Title</h5>
                                         </div>
-                                        <div class="project-body m-4">
-                                            <h5 class="card-title">{{ project.title }}</h5>
-                                            <p class="card-text">{{ project.description }}</p>
+                                        <div class="project-body position-relative px-4">
+                                            <section class="container text-center position-absolute top-50 start-50 translate-middle p-3">
+                                                <div class="d-flex flex-wrap justify-content-center">
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">Jajascript</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">Python</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">NodeJS</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">MongoDB</h6>
+                                                    </div>
+                                                </div>
+                                            </section>
                                         </div>
                                     </div>
                                 </div>
@@ -201,15 +239,29 @@
                                 <div class="card text-white shadow-sm ratio project-card">
                                     <img src="{{ project.image.url }}" class="card-img project-img" alt="Image of one of Pavels Projects.">
                                     <div class="card-img-overlay project-overlay p-0">
-                                        <div class="project-header rounded ratio p-0">
+                                        <div class="project-header rounded-top ratio p-0">
                                             <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
                                             <h5 class="text-center text-light m-1">Project Title</h5>
                                         </div>
-                                        <div class="project-body m-4">
-                                            <h5 class="card-title">{{ project.title }}</h5>
-                                            <p class="card-text">{{ project.description }}</p>
+                                        <div class="project-body position-relative px-4">
+                                            <section class="container text-center position-absolute top-50 start-50 translate-middle p-3">
+                                                <div class="d-flex flex-wrap justify-content-center">
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">Jajascript</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">Python</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">NodeJS</h6>
+                                                    </div>
+                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                        <h6 class="m-1 px-1">MongoDB</h6>
+                                                    </div>
+                                                </div>
+                                            </section>
                                         </div>
                                     </div>
                                 </div>

@@ -55,7 +55,7 @@
     --bs-aspect-ratio: 63%;
 }
 
-#portfolio-section .project-overlay {
+#portfolio-section .project-overlay:hover {
     background-color: rgba(0, 0, 0, 0.76);
 }
 
@@ -64,6 +64,16 @@
     height: 1.8em;
 }
 
+#portfolio-section .project-body {
+    height: 100%;
+    width: 100%;
+    margin-top: -1.8em;
+    display: none;
+}
+
+#portfolio-section .project-overlay:hover > .project-body {
+    display: block;
+}
 
 #portfolio-section .color-dot {
     width: .8em;
@@ -88,4 +98,8 @@
 
 #portfolio-section .color-menu {
     background-color: #eeeeee;
+}
+
+#portfolio-section .tech-card {
+    background-color: #202124;
 }
