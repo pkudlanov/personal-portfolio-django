@@ -14,7 +14,7 @@ p {
     color: white;
 }
 
-a:hover * {
+nav a:hover * {
     color: #e78e36;
     font-weight: 200;
 }

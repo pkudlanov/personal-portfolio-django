@@ -22,7 +22,7 @@
         <div class="position-sticky pt-3 ps-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'blog:all_posts' %}">
+                    <a class="nav-link" href="{% url 'blog:all_posts' %}">
                         <svg class="bi feather" fill="none" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round">
                             <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#vector-pen"/>
                         </svg>
@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
                         <svg class="bi feather" fill="none" stroke="currentColor" stroke-width=".2" stroke-linecap="round" stroke-linejoin="round">
                             <use xlink:href="{% static 'portfolio/assets/bootstrap-icons.svg' %}#house-door"/>
                         </svg>
