@@ -1,10 +1,10 @@
-#home-section .section {
+#home-section {
     height: 100vh;
     min-height: 550px;
 }
 
 #home-section .banner {
-    height: 45vh;
+    height: 30vh;
     width: 100%;
     background-image: url('/static/portfolio/assets/banner.jpg');
     background-repeat: no-repeat;
@@ -21,12 +21,49 @@
 
 #home-section .profile-pic {
     background-image: url('/static/portfolio/assets/my-portrait.jpg');
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+@media (min-width: 576px) {
+    #home-section .profile-pic {
+        width: 116px;
+        height: 116px;
+    }
+    #home-section .text-part {
+        margin-top: 75px;
+        height: 62vh;
+    }
+    #home-section .banner {
+        height: 38vh;
+    }
+}
+
+@media (min-width: 768px) {
+    #home-section .profile-pic {
+        width: 134px;
+        height: 134px;
+    }
+    #home-section .text-part {
+        margin-top: 85px;
+        height: 55vh;
+    }
+    #home-section .banner {
+        height: 45vh;
+    }
+}
+
+@media (min-width: 992px) {
+    #home-section .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    #home-section .text-part {
+        margin-top: 100px;
+    }
 }
 
 #home-section .quote {
@@ -34,7 +71,9 @@
 }
 
 #home-section .text-part {
+    height: 70vh;
     width: 100%;
+    margin-top: 65px;
 }
 
 /* #home-section .arrow-down {

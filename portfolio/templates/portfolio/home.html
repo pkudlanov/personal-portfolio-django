@@ -122,19 +122,19 @@
 
 
     <main class="col-md-9 ms-sm-auto col-lg-10 my-0 py-0 position-relative">
-        
+
         <!-- BLOG BANNER -->
         <a href="{% url 'blog:all_posts' %}">
             <div class="blog-banner">
                 <h4 class="fs-4 text-light"><b>BL<span class="color-y">O</span>G</b></h4>
             </div>
         </a>
-        
+
         <!-- HOME TOP SECTION -->
         <div id="home-section" class="section position-relative">
             <div class="banner mb-4">
                 <div class="overlay position-relative">
-                    <div class="profile-pic position-absolute top-100 translate-middle-y ms-5"></div>
+                    <div class="profile-pic rounded-circle position-absolute top-100 translate-middle-y ms-md-5 ms-sm-4 ms-3"></div>
                 </div>
             </div>
 
@@ -159,10 +159,10 @@
             </h1>
 
         </div>
-    
+
 
         <!-- PROJECTS SECTION -->
-        <div id="portfolio-section" class="section pb-5">
+        <div id="portfolio-section" class="section mb-5">
             <section class="text-center container p-3 pt-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1>Web Developer Portfolio</h1>
@@ -200,7 +200,7 @@
                     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 g-3">
 
                         {% for project in projects %}
-                        
+
                             {% if project.url %}
 
                             <a href="{{ project.url }}">
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             </a>
 
@@ -275,7 +275,7 @@
                             {% endif %}
 
                         {% endfor %}
-        
+
                     </div>
 
                 </div>
