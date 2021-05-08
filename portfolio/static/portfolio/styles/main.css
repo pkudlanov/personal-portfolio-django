@@ -48,18 +48,30 @@ a:hover * {
 .blog-banner {
     display: block;
     position: fixed;
-    top: 50px;
-    right: -120px;
+    top: 40px;
+    left: -130px;
     width: 400px;
-    height: 40px;
-    line-height: 40px;
+    height: 44px;
+    line-height: 44px;
     text-align: center;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     color: white;
     background-color: #88aa33;
     z-index: 500;
     padding-top: 2px;
     transition: .3s;
+}
+
+@media (min-width: 768px) {
+    .blog-banner {
+        top: 50px;
+        left: auto;
+        right: -120px;
+        width: 400px;
+        height: 44px;
+        line-height: 44px;
+        transform: rotate(45deg);
+    }
 }
 
 .blog-banner:hover {
