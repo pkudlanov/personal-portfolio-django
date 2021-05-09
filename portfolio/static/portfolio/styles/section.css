@@ -9,7 +9,6 @@
 
 #home-section .banner {
     height: 30vh;
-    width: 100%;
     background-image: url('/static/portfolio/assets/banner.jpg');
     background-repeat: no-repeat;
     background-position: center center;
