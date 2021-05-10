@@ -140,9 +140,9 @@
 
             <div class="text-part row justify-content-center p-0 mx-0 mb-3">
                 <div class="col-md-9 text-center px-4 px-lg-5">
-                    <h1 id="hometext" class="font-weight-bold color-o">Greetings</h1>
-                    <h1 id="hometext" class="font-weight-bold">I'm <span class="color-g">P</span>avel Ku<span class="color-y">d</span>la<i class="color-g">n</i>ov</h1>
-                    <h2>Full-Stack Software Developer</h2>
+                    <h1 class="font-weight-bold color-y display-1">Greetings</h1>
+                    <h2 class="font-weight-bold display-5">I'm <span class="color-g">P</span>avel Ku<span class="color-o">d</span>la<i class="color-g">n</i>ov</h2>
+                    <h2 class="display-5">Full-Stack Software Developer</h2>
                     <h4 class="font-weight-bold mt-5 quote"><em>A firm believer in that software does not write itself. Each line of code ultimately has a piece of someone's mind behind it. </em>😄</h4>
                 </div>
             </div>
@@ -165,7 +165,7 @@
         <div id="portfolio-section" class="section">
             <section class="text-center container p-3 pt-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1>Web Developer Portfolio</h1>
+                    <h1 class="display-2 color-y">Web Developer Portfolio</h1>
                     <p class="lead">Just a small collection of various projects I've done.</p>
                 </div>
             </section>
@@ -287,7 +287,7 @@
         <div id="about-section" class="section">
             <div class="row row-cols-1 row-cols-sm-2 g-3 mx-4 about-row">
                 <div class="col">
-                    <h1>Who is this guy?</h1>
+                    <h1 class="display-2 color-y">Who is this guy?</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ratione quidem repellat excepturi explicabo? Enim, iure. Enim, placeat qui eligendi illo, alias quae accusantium vel excepturi quasi exercitationem corrupti neque?</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ratione quidem repellat excepturi explicabo? Enim, iure. Enim, placeat qui eligendi illo, alias quae accusantium vel excepturi quasi exercitationem corrupti neque?</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo ratione quidem repellat excepturi explicabo? Enim, iure. Enim, placeat qui eligendi illo, alias quae accusantium vel excepturi quasi exercitationem corrupti neque?</p>
@@ -301,12 +301,49 @@
 
         <!-- CONTACT SECTION -->
         <div id="contact-section" class="section mt-4">
-            <div class="container form-container p-5">
-                <h1 class="padder">Give Me a Holler!</h1>
-                <p>Get in touch or just say hi</p>
-                <p>Shoot a question and I'll reply</p>
-                <p>Send me an email at <b>me@kudlanov.com</b> if you like</p>
-                <p>Or call 717.304.4896, trust me. I wont bite</p>
+            <div class="container form-container p-5 text-center">
+                <h1 class="color-y display-1">Give Me a Holler!</h1>
+                <p class="lead">Get in touch or just say hi</p>
+                <p class="lead">Shoot a question and I'll reply</p>
+                <p class="lead">Send me an email at <span class="color-o">me@kudlanov.com</span> if you like</p>
+                <p class="lead">Or call <span class="color-o">717.304.4896</span>, trust me. I wont bite</p>
+            </div>
+            <div class="form-container container p-lg-5 p-md-4 p-3">
+                <form method="post">
+                    {% csrf_token %}
+                    {% load widget_tweaks %}
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="lead">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+
+                    {{ form.non_field_errors }}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            {{ form.name.errors }}
+                            {% render_field form.name class="form-control input-bg form-control-lg border-0 text-light" placeholder="Name" aria-label="Name" %}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.from_email.errors }}
+                            {% render_field form.from_email class="form-control input-bg form-control-lg border-0 text-light" placeholder="E-Mail" aria-label="E-Mail" %}
+                        </div>
+                        <div class="col-12">
+                            {{ form.subject.errors }}
+                            {% render_field form.subject class="form-control input-bg form-control-lg border-0 text-light" placeholder="Subject" aria-label="Subject" %}
+                        </div>
+                        <div class="col-12">
+                            {{ form.message.errors }}
+                            {% render_field form.message class="form-control input-bg form-control-lg border-0 text-light" placeholder="Your voice will be heard!" aria-label="Message" %}
+                        </div>
+                    </div>
+                    <div class="row my-3 justify-content-end">
+                        <div class="form-actions col-md-6 align-self-end">
+                            <button class="btn btn-lg rounded col-12 color-y" type="submit">Send Your Voice</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 

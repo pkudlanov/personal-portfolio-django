@@ -149,3 +149,17 @@
 #contact-section .padder {
     padding-top: 6vh;
 }
+
+#contact-section .input-bg {
+    background-color: #3a3a3a;
+}
+
+#contact-section button {
+    border: 1px solid #e6cc48;
+}
+
+#contact-section button:hover {
+    background-color: #f9d522;
+    color: #202124;
+    transition: .6s;
+}
