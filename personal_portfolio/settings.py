@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'portfolio',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 try:
     from .local_settings import *  # noqa: F403 F401
 except ImportError:
-    print('Looks like no local file. You must be on a production server')
+    print('Looks like no local file. You must be on a production server')\
+
+
+# E-Mail Configuration
+# https://docs.djangoproject.com/en/3.2/topics/email/
+
+DEFAULT_FROM_EMAIL = 'me@kudlanov.com'
