@@ -309,29 +309,25 @@
                 <p class="lead">Or call <span class="color-o">717.304.4896</span>, trust me. I wont bite</p>
             </div>
             <div class="form-container container p-lg-5 p-md-4 p-3">
-                <form method="post" id="post-form">
+                <form method="post" id="post-form" novalidate>
                     {% csrf_token %}
                     {% load widget_tweaks %}
 
-                    <div id="success-message"></div>
+                    <div id="success-msg-container"></div>
 
                     {{ form.non_field_errors }}
                     <div class="row g-3">
                         <div class="col-md-6">
-                            {{ form.name.errors }}
-                            {% render_field form.name class="form-control input-bg form-control-lg border-0 text-light" placeholder="Name" aria-label="Name" %}
+                            {% render_field form.name class="form-control input-bg form-control-lg text-light border-0" placeholder="Name" aria-label="Name" %}
                         </div>
                         <div class="col-md-6">
-                            {{ form.from_email.errors }}
-                            {% render_field form.from_email class="form-control input-bg form-control-lg border-0 text-light" placeholder="E-Mail" aria-label="E-Mail" %}
+                            {% render_field form.from_email class="form-control input-bg form-control-lg text-light border-0" placeholder="E-Mail" aria-label="E-Mail" %}
                         </div>
                         <div class="col-12">
-                            {{ form.subject.errors }}
-                            {% render_field form.subject class="form-control input-bg form-control-lg border-0 text-light" placeholder="Subject" aria-label="Subject" %}
+                            {% render_field form.subject class="form-control input-bg form-control-lg text-light border-0" placeholder="Subject" aria-label="Subject" %}
                         </div>
                         <div class="col-12">
-                            {{ form.message.errors }}
-                            {% render_field form.message class="form-control input-bg form-control-lg border-0 text-light" placeholder="Your voice will be heard!" aria-label="Message" %}
+                            {% render_field form.message class="form-control input-bg form-control-lg text-light border-0" placeholder="Your voice will be heard!" aria-label="Message" %}
                         </div>
                     </div>
                     <div class="row my-3 justify-content-end">
@@ -347,8 +343,12 @@
 </div>
 
 <script>
+    // Ajax submission of email form with errors as ajax as well
     $(document).on('submit', '#post-form', function(e){
+
+        // Preventing page refresh on form submit action
         e.preventDefault();
+
         $.ajax({
             type: 'POST',
             url: '{% url "send_email" %}',
@@ -361,9 +361,63 @@
                 action: 'post'
             },
             success: function(json){
-                console.log(json.success_message);
-                document.getElementById("post-form").reset();
-                $('#success-message').append('<h3 class="color-g">' + json.success_message + '</h3>')
+                // Hard coded array of email fields
+                // Simpler then retrieving from backend cuz they're not changing
+                fields_arr = ['name', 'from_email', 'subject', 'message'];
+
+                // If email form data is valid, has no errors
+                if(json.data_valid){
+
+                    // Remove error labels and error styling
+                    fields_arr.forEach(key => {
+                        $('[for=' + 'id_' + key + ']').remove();
+                        element = document.getElementById('id_' + key);
+                        if(!element.classList.contains('border-0')) element.classList.add('border-0');
+                        if(element.classList.contains('is-invalid')) element.classList.remove('is-invalid');
+                    });
+
+                    // If user sends a second message it will remove the previous success message
+                    $('#success-msg').remove();
+                    document.getElementById("post-form").reset();
+                    $('#success-msg-container').append('<h3 id="success-msg" class="color-g">' + json.success_message + '</h3>')
+
+                // Else if email form data has errors
+                } else {
+                    form_errors = JSON.parse(json.form_errors);
+
+                    fields_arr.forEach(key => {
+
+                        // If field has errors, add errors labels, and error styling
+                        if(Object.keys(form_errors).includes(key)){
+
+                            // Remove previous errors so they don't stack on top of each other
+                            $('[for=' + 'id_' + key + ']').remove();
+
+                            // Reset input field to be empty if it has errors
+                            element = document.getElementById('id_' + key);
+                            element.value = '';
+
+                            // Error styling reverted from no error styling, to error styling
+                            if(element.classList.contains('border-0')) element.classList.remove('border-0');
+                            if(!element.classList.contains('is-invalid')) element.classList.add('is-invalid');
+
+                            // Add error labels
+                            form_errors[key].forEach(error => {
+                                $('#id_' + key).after(
+                                    '<label for="' + 'id_' + key + '" class="text-danger">' + error +
+                                    '</label>'
+                                );
+                            });
+
+                        // Else if previous error is no more, remove error and revert styling
+                        } else {
+                            element = document.getElementById('id_' + key);
+                            if(!element.classList.contains('border-0')) element.classList.add('border-0');
+                            if(element.classList.contains('is-invalid')) element.classList.remove('is-invalid');
+                            $('[for=' + 'id_' + key + ']').remove();
+                        }
+                    });
+                }
             },
             error: function(xhr, errmsg, err){
                 console.log(xhr.status + ": " + xhr.responseText);
