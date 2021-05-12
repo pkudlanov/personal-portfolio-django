@@ -14,9 +14,16 @@ from .forms import ContactForm
 
 def home(request):
     form = ContactForm()
+    proj_tags = []
 
     projects = Project.objects.all()
-    return render(request, 'portfolio/home.html', {'projects': projects, 'form': form})
+
+    for proj in projects:
+        for tag in proj.tags.all():
+            if tag.name not in proj_tags:
+                proj_tags.append(tag.name)
+
+    return render(request, 'portfolio/home.html', {'projects': projects, 'form': form, 'proj_tags': proj_tags})
 
 
 def send_email(request):
