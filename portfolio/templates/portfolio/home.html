@@ -173,24 +173,12 @@
             <section class="container text-center p-3">
                 <h3>Technologies</h3>
                 <div class="d-flex flex-wrap justify-content-center">
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">Jajascript</h6>
-                    </div>
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">Python</h6>
-                    </div>
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">NodeJS</h6>
-                    </div>
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">MongoDB</h6>
-                    </div>
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">Firebase</h6>
-                    </div>
-                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                        <h6 class="m-1 px-1">PostgreSQL</h6>
-                    </div>
+
+                    {% for tag in proj_tags %}
+                        <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                            <h6 class="m-1 px-1">{{ tag }}</h6>
+                        </div>
+                    {% endfor %}
                 </div>
             </section>
 
@@ -212,23 +200,16 @@
                                             <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
-                                            <h5 class="text-center text-light m-1">Project Title</h5>
+                                            <h5 class="text-center text-light m-1">{{ project.title }}</h5>
                                         </div>
                                         <div class="project-body position-relative px-4">
                                             <section class="container text-center position-absolute top-50 start-50 translate-middle p-3">
                                                 <div class="d-flex flex-wrap justify-content-center">
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">Jajascript</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">Python</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">NodeJS</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">MongoDB</h6>
-                                                    </div>
+                                                    {% for tag in project.tags.all %}
+                                                        <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                            <h6 class="m-1 px-1">{{ tag }}</h6>
+                                                        </div>
+                                                    {% endfor %}
                                                 </div>
                                             </section>
                                         </div>
@@ -248,23 +229,16 @@
                                             <div class="color-dot color-dot-r position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-y position-absolute top-50 start-0 translate-middle"></div>
                                             <div class="color-dot color-dot-g position-absolute top-50 start-0 translate-middle"></div>
-                                            <h5 class="text-center text-light m-1">Project Title</h5>
+                                            <h5 class="text-center text-light m-1">{{ project.title }}</h5>
                                         </div>
                                         <div class="project-body position-relative px-4">
                                             <section class="container text-center position-absolute top-50 start-50 translate-middle p-3">
                                                 <div class="d-flex flex-wrap justify-content-center">
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">Jajascript</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">Python</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">NodeJS</h6>
-                                                    </div>
-                                                    <div class="tech-card text-light text-center border border-secondary rounded m-1">
-                                                        <h6 class="m-1 px-1">MongoDB</h6>
-                                                    </div>
+                                                    {% for tag in project.tags.all %}
+                                                        <div class="tech-card text-light text-center border border-secondary rounded m-1">
+                                                            <h6 class="m-1 px-1">{{ tag }}</h6>
+                                                        </div>
+                                                    {% endfor %}
                                                 </div>
                                             </section>
                                         </div>
