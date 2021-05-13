@@ -16,6 +16,7 @@ whitenoise = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
 django-widget-tweaks = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
