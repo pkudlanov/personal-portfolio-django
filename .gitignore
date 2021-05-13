@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Google Cloud Storage Config File
+kudlanov-portfolio-968cc3676318.json
