@@ -6,7 +6,7 @@ import dotenv
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'personal_portfolio.settings.development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'personal_portfolio.settings')
 
     if os.getenv('DJANGO_SETTINGS_MODULE'):
         os.environ['DJANGO_SETTINGS_MODULE'] = os.getenv('DJANGO_SETTINGS_MODULE')
