@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,12 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8hlra&grk_d#*mk=lgh7jk2(h!ukj@$p4v$e@1=_l%p01^yla&'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['kudlanov-django.herokuapp.com']
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # Application definition
@@ -75,14 +69,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': dj_database_url.config()
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -125,11 +111,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-try:
-    from .local_settings import *  # noqa: F403 F401
-except ImportError:
-    print('Looks like no local file. You must be on a production server')\
 
 
 # E-Mail Configuration
