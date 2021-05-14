@@ -27,6 +27,7 @@ ALLOWED_HOSTS = [
     'www.kudlanov-django.herokuapp.com',
     'kudlanov.com',
     'www.kudlanov.com',
+    '167.99.125.189',
 ]
 
 
