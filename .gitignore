@@ -130,3 +130,7 @@ dmypy.json
 
 # Google Cloud Storage Config File
 kudlanov-portfolio-968cc3676318.json
+
+# Static and Media root directories
+static/
+media/
