@@ -23,7 +23,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['kudlanov-django.herokuapp.com']
+ALLOWED_HOSTS = [
+    'kudlanov-django.herokuapp.com',
+    'www.kudlanov-django.herokuapp.com',
+    'kudlanov.com',
+    'www.kudlanov.com',
+]
 
 
 # Application definition
