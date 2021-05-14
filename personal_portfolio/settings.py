@@ -81,7 +81,14 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'portfolioDB',
+        'USER': 'portfolio_admin',
+        'PASSWORD': os.getenv('PORTFOLIODB_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
 
 
@@ -122,11 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 try:
     from .local_settings import *  # noqa: F403 F401
