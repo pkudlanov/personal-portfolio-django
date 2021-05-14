@@ -17,8 +17,6 @@ dj-database-url = "*"
 psycopg2-binary = "*"
 django-widget-tweaks = "*"
 python-dotenv = "*"
-django-storages = "*"
-google-cloud-storage = "*"
 
 [requires]
 python_version = "3.8"
