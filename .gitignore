@@ -132,5 +132,5 @@ dmypy.json
 kudlanov-portfolio-968cc3676318.json
 
 # Static and Media root directories
-static/
-media/
+/static/
+/media/
