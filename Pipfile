@@ -14,7 +14,6 @@ Pillow = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
 django-widget-tweaks = "*"
-python-dotenv = "*"
 django-environ = "*"
 
 [requires]
