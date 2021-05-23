@@ -26,3 +26,12 @@ Personal portfolio site based off of python/django. Built it after taking a few 
     - All the error handling was custome as well.
       - Errors were getting sent as ajax so I wouldn't have to refresh the page each time it errored on submit.
       - I did get errors from django but I sent them myself with ajax.
+- [Article to Setup Email Sending with Django, Digitalocean, Namecheap](https://moonbooks.org/Articles/How-to-create-and-send-an-email-with-a-django-based-website-using-namecheap-and-digitalocean-/)
+  - This artical was super helpful to setup everything correctly to send email from my django app
+    - I'm not sure why I needed to setup the MX and TXT, DNS records on Digitalocea because the message did get sent without them as well.
+- [Basic Setup of Email in Django](https://learndjango.com/tutorials/django-email-contact-form)
+  - Used this artical for setting up the django code for sending an email.
+  - Forms, Views, Templates, Urls, and some Settings.
+  - Did not use the email service setup part. I have my own email from namecheap.
+- [Django Email Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
+  - Refered to the docs a bit for the send_mail() function and some other things.
