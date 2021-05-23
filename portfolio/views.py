@@ -2,6 +2,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.http.response import JsonResponse
 from django.shortcuts import render
+from django.conf import settings
 
 import json
 
@@ -10,6 +11,8 @@ import json
 
 from .models import Project
 from .forms import ContactForm
+
+from .utils import msg_constructor
 
 
 def home(request):
@@ -31,12 +34,19 @@ def send_email(request):
     data_valid = False
     if send_form.is_valid():
         data_valid = True
-        # name = form.cleaned_data['name']
+        name = send_form.cleaned_data['name']
         from_email = send_form.cleaned_data['from_email']
         subject = send_form.cleaned_data['subject']
         message = send_form.cleaned_data['message']
+        constructed_message = msg_constructor(name, from_email, subject, message)
         try:
-            send_mail(subject, message, from_email, ['me@kudlanov.com'])
+            send_mail(
+                subject,
+                constructed_message,
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER],
+                fail_silently=False
+            )
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return JsonResponse({
