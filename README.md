@@ -35,3 +35,5 @@ Personal portfolio site based off of python/django. Built it after taking a few 
   - Did not use the email service setup part. I have my own email from namecheap.
 - [Django Email Docs](https://docs.djangoproject.com/en/3.2/topics/email/)
   - Refered to the docs a bit for the send_mail() function and some other things.
+- [Secure Nginx Server with Let's Encrypt on Ubuntu Digitalocean](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
+  - Everything worked flawlessly. No errors, or hickups whatsoever.
