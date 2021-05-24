@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.conf import settings
+from django.template import loader
 
 import json
 
@@ -38,14 +39,26 @@ def send_email(request):
         from_email = send_form.cleaned_data['from_email']
         subject = send_form.cleaned_data['subject']
         message = send_form.cleaned_data['message']
+
+        html_message = loader.render_to_string(
+            'portfolio/email_template.html', {
+                'name': name,
+                'from_email':  from_email,
+                'subject': subject,
+                'message': message
+            }
+        )
+
         constructed_message = msg_constructor(name, from_email, subject, message)
+        
         try:
             send_mail(
                 subject,
                 constructed_message,
                 settings.EMAIL_HOST_USER,
                 [settings.EMAIL_HOST_USER],
-                fail_silently=False
+                fail_silently=True,
+                html_message=html_message,
             )
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
