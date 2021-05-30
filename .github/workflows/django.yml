@@ -25,9 +25,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         deactivate
-    # - name: Run Tests
-    #   run: |
-    #     python manage.py test
     - name: Run migrations
       run: |
         source /home/pkudlanov/actions-runner/personal-portfolio-work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
