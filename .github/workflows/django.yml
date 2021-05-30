@@ -21,13 +21,18 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
+        source /home/pkudlanov/actions-runner/personal-portfolio-work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py test
+        deactivate
+    # - name: Run Tests
+    #   run: |
+    #     python manage.py test
     - name: Run migrations
-      run: python manage.py migrate
+      run: |
+        source /home/pkudlanov/actions-runner/personal-portfolio-work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
+        python manage.py migrate
+        deactivate
     - name: Restart Gunicorn process
       run: |
         sudo systemctl restart gunicorn
