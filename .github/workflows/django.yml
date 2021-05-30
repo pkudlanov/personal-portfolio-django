@@ -21,13 +21,21 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
+<<<<<<< HEAD
         source /home/pkudlanov/actions-runner/personal-portfolio-work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
+=======
+        source /home/pkudlanov/actions-runner/_work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
+>>>>>>> d9c269166e18e4806592f059e3b7c34aa65c43c2
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         deactivate
     - name: Run migrations
       run: |
+<<<<<<< HEAD
         source /home/pkudlanov/actions-runner/personal-portfolio-work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
+=======
+        source /home/pkudlanov/actions-runner/_work/personal-portfolio-django/personal-portfolio-django/env/bin/activate
+>>>>>>> d9c269166e18e4806592f059e3b7c34aa65c43c2
         python manage.py migrate
         deactivate
     - name: Restart Gunicorn process
