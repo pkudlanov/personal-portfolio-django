@@ -21,7 +21,8 @@ from portfolio import views
 import environ
 
 env = environ.Env()
-environ.Env.read_env()
+ENV_PATH = env.str('ENV_PATH')
+environ.Env.read_env(ENV_PATH)
 
 
 urlpatterns = [
