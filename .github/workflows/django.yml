@@ -25,7 +25,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run migrations
       env:
-        ENV_PATH: /home/pkudlanov/environments/personal_portfolio_env/proj/.env
+        ENV_PATH: {{ secrets.ENV_PATH }}
       run: $ENV_PATH python manage.py migrate
     - name: Restart Gunicorn process
       run: |
