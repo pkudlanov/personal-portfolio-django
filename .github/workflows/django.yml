@@ -24,8 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run migrations
-      env:
-        ENV_PATH: {{ secrets.ENV_PATH }}
       run: $ENV_PATH python manage.py migrate
     - name: Restart Gunicorn process
       run: |
