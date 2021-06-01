@@ -37,3 +37,25 @@ Personal portfolio site based off of python/django. Built it after taking a few 
   - Refered to the docs a bit for the send_mail() function and some other things.
 - [Secure Nginx Server with Let's Encrypt on Ubuntu Digitalocean](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04)
   - Everything worked flawlessly. No errors, or hickups whatsoever.
+- [Automatic Deployment With Github Actions](https://www.youtube.com/watch?v=X3F3El_yvFg)
+  - The video helped to setup basic workflow.
+  - I needed to do a lot more configuration as a python/django workflow.
+- [Gunicorn Service Can't Read Environment Variables](https://www.digitalocean.com/community/questions/gunicorn-service-can-t-read-environment-variables)
+  - So this helped in figuring out why gunicorn wasn't reading my env_path environment variable.
+  - To be honest I'm not a hundred percent sure this was the exact solution or if it was other config stuff I fixed. It works now so it very well might be partially this.
+- [Multiple Environments With Django-Environ](https://github.com/joke2k/django-environ/issues/143)
+  - This helped to setup the settings file in a way that it worked.
+- [How to Set Environment Variables in Linux](https://phoenixnap.com/kb/linux-set-environment-variable)
+  - Used this as refrence for reading the terminal environment variables like with printenv
+  - Also for setting environment variables more permenantly
+- [Run Particular Commands Without Sudo Password In Linux](https://ostechnix.com/run-particular-commands-without-sudo-password-linux/)
+  - Was helpful to make the `sudo systemctl restart gunicorn` command run without password in the github actions workflow.
+- [Permission denied to a file I own?](https://serverfault.com/questions/18110/permission-denied-to-a-file-i-own)
+  - My .env file seemed to not have permission to be read but it was owned.
+  - Changed from -rwxrwxr-- to -rwxrwxr-x on the .env file. It worked after doing that.
+- [Environment Variables Github Docs](https://docs.github.com/en/actions/reference/environment-variables)
+  - Refrenced these github docs a lot to see how to use environment variables in github actions workflow.
+- [Django-environ Docs](https://django-environ.readthedocs.io/en/latest/)
+  - Referenced the multiple env files section.
+- [setup-python V2, Github Repo](https://github.com/actions/setup-python)
+  - Referenced a lot to see how it worked and how to setup the python/django workflow in github actions with setup-python.
