@@ -14,6 +14,10 @@ p {
     color: white;
 }
 
+nav {
+    z-index: 100;
+}
+
 nav a:hover * {
     color: #e78e36;
     font-weight: 200;
@@ -51,7 +55,7 @@ nav a:hover * {
     transform: rotate(-45deg);
     color: white;
     background-color: #88aa33;
-    z-index: 500;
+    z-index: 10;
     padding-top: 2px;
     transition: .3s;
 }
