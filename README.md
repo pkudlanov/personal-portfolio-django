@@ -59,3 +59,8 @@ Personal portfolio site based off of python/django. Built it after taking a few 
   - Referenced the multiple env files section.
 - [setup-python V2, Github Repo](https://github.com/actions/setup-python)
   - Referenced a lot to see how it worked and how to setup the python/django workflow in github actions with setup-python.
+- [How to Install Nginx on Ubuntu With Multiple Domains](https://devanswers.co/install-nginx-ubuntu-20-04-multiple-domains/)
+  - I'm hosting 2 sites on one digitalocean droplet. This was a reference to do that correctly.
+- [How to run multiple self-hosted runners on a single host](https://github.community/t/how-to-run-multiple-self-hosted-runners-on-a-single-host/130474)
+  - Referenced the blog to correctly run multiple self hosted runners on one digitalocean host.
+  - Seperate runner for each host individually.
