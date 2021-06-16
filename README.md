@@ -64,3 +64,8 @@ Personal portfolio site based off of python/django. Built it after taking a few 
 - [How to run multiple self-hosted runners on a single host](https://github.community/t/how-to-run-multiple-self-hosted-runners-on-a-single-host/130474)
   - Referenced the blog to correctly run multiple self hosted runners on one digitalocean host.
   - Seperate runner for each host individually.
+- [Making SVG's Responsive with CSS](https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/)
+  - The svg files just kept acting wierd. This article helped clear some things up.
+  - Setting them up as background images.
+- [Changing image src depending on screen size](https://stackoverflow.com/questions/30460681/changing-image-src-depending-on-screen-size)
+  - I ended up setting up the svg's as background images to be able to get the specific webpage width breakpoints as media queries.
