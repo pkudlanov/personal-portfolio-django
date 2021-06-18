@@ -3,23 +3,15 @@
 }
 
 #home-section {
-    height: 100vh;
-    min-height: 550px;
+    min-height: 100vh;
 }
 
 #home-section .banner {
-    height: 30vh;
     background-image: url('/static/portfolio/assets/banner.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
-
-#home-section .overlay {
-    background-color: rgba(0, 0, 0, 0.637);
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+    display: none;
 }
 
 #home-section .profile-pic {
@@ -29,19 +21,60 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    display: none;
+}
+
+#home-section .text-part {
+    padding-top: 5vh;
+}
+
+@media (min-height: 576px) {
+    #home-section .text-part {
+        padding-top: 5vh;
+    }
+    #home-section .banner {
+        height: 38vh;
+    }
+    #home-section .profile-pic {
+        display: block;
+    }
+    #home-section .banner {
+        display: block;
+    }
+}
+
+@media (min-height: 768px) {
+    #home-section .text-part {
+        padding-top: 5vh;
+    }
+    #home-section .banner {
+        height: 45vh;
+    }
+    #home-section .profile-pic {
+        display: block;
+    }
+}
+
+@media (min-height: 992px) {
+    #home-section .text-part {
+        padding-top: 5vh;
+    }
+    #home-section .profile-pic {
+        display: block;
+    }
+}
+
+#home-section .overlay {
+    background-color: rgba(0, 0, 0, 0.637);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 @media (min-width: 576px) {
     #home-section .profile-pic {
         width: 116px;
         height: 116px;
-    }
-    #home-section .text-part {
-        margin-top: 75px;
-        height: 62vh;
-    }
-    #home-section .banner {
-        height: 38vh;
     }
 }
 
@@ -50,13 +83,6 @@
         width: 134px;
         height: 134px;
     }
-    #home-section .text-part {
-        margin-top: 85px;
-        height: 55vh;
-    }
-    #home-section .banner {
-        height: 45vh;
-    }
 }
 
 @media (min-width: 992px) {
@@ -64,23 +90,11 @@
         width: 150px;
         height: 150px;
     }
-    #home-section .text-part {
-        margin-top: 100px;
-    }
 }
 
 #home-section .quote {
     color: rgba(255, 255, 255, 0.5);
 }
-
-#home-section .text-part {
-    height: 70vh;
-    margin-top: 65px;
-}
-
-/* #home-section .arrow-down {
-    color: #e6cc48;
-} */
 
 #home-section .bounce {
     animation: bounce .8s infinite;
@@ -153,27 +167,30 @@
 @media screen and (max-width: 576px) {
     #about-section .sdlc-chart {
         background-image: url('/static/portfolio/assets/sdlc-md.svg');
-        background-size: contain;
+        background-size: 290px auto;
         background-repeat: no-repeat;
         background-position: center;
+        min-height: 800px;
     }
 }
 
 @media screen and (min-width: 576px) {
     #about-section .sdlc-chart {
         background-image: url('/static/portfolio/assets/sdlc-lg.svg');
-        background-size: contain;
+        background-size: 450px auto;
         background-repeat: no-repeat;
         background-position: center;
+        min-height: 780px;
     }
 }
 
 @media screen and (min-width: 768px) {
     #about-section .sdlc-chart {
         background-image: url('/static/portfolio/assets/sdlc-sm.svg');
-        background-size: contain;
+        background-size: 70vw auto;
         background-repeat: no-repeat;
         background-position: center;
+        min-height: 70vw;
     }
 }
 
@@ -183,6 +200,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        min-height: 80vh;
     }
 }
 
@@ -192,11 +210,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        min-height: 80vh;
     }
-}
-
-#about-section .about-col {
-    min-height: 80vh;
 }
 
 #contact-section .padder {
