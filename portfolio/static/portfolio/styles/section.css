@@ -111,6 +111,10 @@
     --bs-aspect-ratio: 63%;
 }
 
+#portfolio-section .project-img {
+    border-top: 1.8em solid gray;
+}
+
 #portfolio-section .project-overlay:hover {
     background-color: rgba(0, 0, 0, 0.76);
 }
