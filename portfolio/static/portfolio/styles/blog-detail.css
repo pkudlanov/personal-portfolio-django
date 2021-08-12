@@ -1,7 +1,15 @@
-.post-body-detail-container {
-    padding: 3em 5em;
-}
-
 .detail-date {
     padding-top: 6em;
+}
+
+.blog-detail .abstract {
+    background-color: rgb(33, 33, 33);
+}
+
+.my-muted {
+    color: rgb(208, 208, 208);
+}
+
+.my-rounded {
+    border-radius: .6em;
 }

@@ -1,12 +1,28 @@
-{% extends 'portfolio/blog_base.html' %}
+{% extends 'portfolio/blog.html' %}
 {% load static %}
 
 {% block blog_content %}
-    <div class="row vh-100">
+    <div class="blog-detail row vh-100">
 
-        <div class="post-body-detail-container col-10">
-            <h2 class="fs-1 mt-1" id="blogdetailtitle">{{ post.title|upper }}</h2>
-            <p class="post-body lh-lg">{{ post.body|safe }}</p>
+        <div class="post-body-detail-containerBAC container col-10 p-4 pt-5">
+            <div class="post-header text-center px-xl-5 px-4 pb-4">
+                <h1 class="mt-1 font-weight-bold color-y display-3" id="blogdetailtitle">{{ post.title|upper }}</h1>
+            </div>
+            <div class="px-xl-5 px-4">
+                <!-- <h2 class="my-muted ms-4 fs-1 my-0">Abstract</h2> -->
+                <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.project.description|safe }}</p>\
+            </div>
+            <div class="px-xl-5 px-4">
+                <a href="{{ post.project.url_production }}">
+                    <img class="img-fluid rounded" src="{{ post.project.image.url }}" alt="App screenshot">
+                </a>
+            </div>
+            <div class="d-grid gap-2 text-center px-xl-5 p-4">
+                <a class="text-decoration-none btn btn-outline-light btn-lg" href="{{ post.project.url_production }}">Checkout the Live App Here</a>
+            </div>
+            <div class="px-xl-5 px-4 pt-4">
+                <p class="lead lh-lg">{{ post.body|safe }}</p>\
+            </div>
         </div>
 
         <div class="position-relative post-day col-2 text-center">
