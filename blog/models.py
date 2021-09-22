@@ -11,10 +11,11 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
     abstract = models.TextField(max_length=500)
+    image = models.ImageField(upload_to='portfolio/images/', blank=True)
     body = models.TextField()
     likes = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
