@@ -17,6 +17,7 @@ django-widget-tweaks = "*"
 django-environ = "*"
 django-markdownify = "*"
 django-cleanup = "*"
+markdownify = "*"
 
 [requires]
 python_version = "3.8"
