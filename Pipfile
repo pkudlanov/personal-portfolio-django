@@ -15,6 +15,8 @@ gunicorn = "*"
 psycopg2-binary = "*"
 django-widget-tweaks = "*"
 django-environ = "*"
+django-markdownify = "*"
+django-cleanup = "*"
 
 [requires]
 python_version = "3.8"
