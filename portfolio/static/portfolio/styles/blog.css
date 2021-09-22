@@ -1,4 +1,4 @@
-#blog h2 {
+#blog .post-header {
     color: #eca762;
     font-weight: 100;
 }
@@ -31,4 +31,8 @@
 
 #blog .date-container {
     width: 3em;
+}
+
+#blog .post-body h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.4em;
 }
