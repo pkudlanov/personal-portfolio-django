@@ -1,5 +1,5 @@
 {% extends 'portfolio/blog.html' %}
-{% load static %}
+{% load static markdownify %}
 
 {% block blog_content %}
     <div class="blog-detail row vh-100">
@@ -8,20 +8,54 @@
             <div class="post-header text-center px-xl-5 px-4 pb-4">
                 <h1 class="mt-1 font-weight-bold color-y display-3" id="blogdetailtitle">{{ post.title|upper }}</h1>
             </div>
-            <div class="px-xl-5 px-4">
-                <!-- <h2 class="my-muted ms-4 fs-1 my-0">Abstract</h2> -->
-                <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.project.description|safe }}</p>\
-            </div>
-            <div class="px-xl-5 px-4">
-                <a href="{{ post.project.url_production }}">
-                    <img class="img-fluid rounded" src="{{ post.project.image.url }}" alt="App screenshot">
-                </a>
-            </div>
-            <div class="d-grid gap-2 text-center px-xl-5 p-4">
-                <a class="text-decoration-none btn btn-outline-light btn-lg" href="{{ post.project.url_production }}">Checkout the Live App Here</a>
-            </div>
-            <div class="px-xl-5 px-4 pt-4">
-                <p class="lead lh-lg">{{ post.body|safe }}</p>\
+
+            {% if post.project %}
+
+                <div class="px-xl-5 px-4 py-2">
+                    <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.project.description|safe }}</p>
+                </div>
+
+                {% if post.project.image %}
+                    {% if post.project.url_production %}
+                        <div class="px-xl-5 px-4 py-2">
+                            <a href="{{ post.project.url_production }}">
+                                <img class="img-fluid rounded" src="{{ post.project.image.url }}" alt="App screenshot">
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="px-xl-5 px-4 py-2">
+                            <img class="img-fluid rounded" src="{{ post.project.image.url }}" alt="App screenshot">
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                {% if post.project.url_production %}
+                    <div class="d-grid gap-2 text-center px-xl-5 px-4 py-2">
+                        <a class="text-decoration-none btn btn-outline-light btn-lg" href="{{ post.project.url_production }}">Checkout the Live App Here</a>
+                    </div>
+                {% endif %}
+
+                {% if post.project.url_github %}
+                    <div class="d-grid gap-2 text-center px-xl-5 px-4 py-2">
+                        <a class="text-decoration-none btn btn-outline-light btn-lg" href="{{ post.project.url_github }}">App Source Code</a>
+                    </div>
+                {% endif %}
+
+                {% else %}
+                    <div class="px-xl-5 px-4 py-2">
+                        <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.abstract|safe }}</p>
+                    </div>
+                    <div class="px-xl-5 px-4 py-2">
+                        <img class="img-fluid rounded" src="{{ post.image.url }}" alt="Blog banner image">
+                    </div>
+
+                {% endif %}
+
+
+
+
+            <div class="px-xl-5 px-4 pt-0">
+                <div class="lead lh-lg post-body">{{ post.body|markdownify|safe }}</div>\
             </div>
         </div>
 
@@ -29,7 +63,7 @@
             <div class="sticky-top">
                 <div class="detail-date position-absolute top-0 start-50 translate-middle-x">
                     <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'M'|upper }}</h3>
-                    <h2 class="my-0 lh-1 fs-1">{{ post.date|date:'d' }}</h2>
+                    <h2 class="my-0 lh-1 fs-1 post-header">{{ post.date|date:'d' }}</h2>
                     <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'Y' }}</h3>
                 </div>
             </div>
