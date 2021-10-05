@@ -5,6 +5,7 @@
     <div class="blog-detail row vh-100">
 
         <div class="post-body-detail-containerBAC container col-10 p-4 pt-5">
+            
             <div class="post-header text-center px-xl-5 px-4 pb-4">
                 <h1 class="mt-1 font-weight-bold color-y display-3" id="blogdetailtitle">{{ post.title|upper }}</h1>
             </div>
@@ -41,22 +42,20 @@
                     </div>
                 {% endif %}
 
-                {% else %}
-                    <div class="px-xl-5 px-4 py-2">
-                        <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.abstract|safe }}</p>
-                    </div>
-                    <div class="px-xl-5 px-4 py-2">
-                        <img class="img-fluid rounded" src="{{ post.image.url }}" alt="Blog banner image">
-                    </div>
+            {% else %}
+                <div class="px-xl-5 px-4 py-2">
+                    <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.abstract|safe }}</p>
+                </div>
+                <div class="px-xl-5 px-4 py-2">
+                    <img class="img-fluid rounded" src="{{ post.image.url }}" alt="Blog banner image">
+                </div>
 
-                {% endif %}
-
-
-
+            {% endif %}
 
             <div class="px-xl-5 px-4 pt-0">
-                <div class="lead lh-lg post-body">{{ post.body|markdownify|safe }}</div>\
+                <div class="lead lh-lg post-body">{{ post.body|markdownify|safe }}</div>
             </div>
+
         </div>
 
         <div class="position-relative post-day col-2 text-center">
