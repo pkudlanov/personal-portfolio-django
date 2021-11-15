@@ -1,5 +1,4 @@
 #blog .post-header {
-    color: #eca762;
     font-weight: 100;
 }
 
@@ -52,4 +51,5 @@
 #blog .post-body h5,
 #blog .post-body h6 {
     margin-top: 1.4em;
+    color: #e6cc48;
 }

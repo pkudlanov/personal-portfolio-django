@@ -3,7 +3,7 @@
 
 {% block blog_content %}
     <div class="container pt-4">
-        <h1 id="blogtitle" class="mt-n5">A Blog to Rule All Blogs</h1>
+        <h1 id="blogtitle" class="mt-n5 color-y">A Blog to Rule All Blogs</h1>
         <h3 class="mb-4">A humble collection of thoughts and ponderings on what makes the internet tick</h3>
     </div>
 
@@ -15,7 +15,7 @@
 
                 <div class="post-body-container col-10">
                     <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
-                        <h2 class="fs-1 post-header">{{ post.title|upper }}</h2>
+                        <h2 class="fs-1 post-header color-y">{{ post.title|upper }}</h2>
                     </a>
 
                     {% if post.project %}
@@ -29,7 +29,7 @@
                 <div class="position-relative post-day col-2 text-center">
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'M'|upper }}</h3>
-                        <h2 class="my-0 lh-1 fs-1 post-header">{{ post.date|date:'d' }}</h2>
+                        <h2 class="my-0 lh-1 fs-1 post-header color-y">{{ post.date|date:'d' }}</h2>
                         <h3 class="my-0 lh-1 fs-5">{{ post.date|date:'Y' }}</h3>
                     </div>
                 </div>
