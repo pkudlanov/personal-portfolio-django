@@ -17,7 +17,19 @@
 }
 
 #blog .post-body-container {
-    padding: 4em 5em;
+    padding: 2.4em 3em;
+}
+
+@media (min-width: 576px) {
+    #blog .post-body-container {
+        padding: 3em 4em;
+    }
+}
+
+@media (min-width: 992px) {
+    #blog .post-body-container {
+        padding: 4em 5em;
+    }
 }
 
 #blog .first-post * {
