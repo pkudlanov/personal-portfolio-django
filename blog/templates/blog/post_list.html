@@ -20,7 +20,7 @@
 
                     {% if post.abstract %}
                         <p class="lh-lg">{{ post.abstract|striptags|truncatechars:300 }}</p>
-                    {% else %}
+                    {% elif post.project.description %}
                         <p class="lh-lg">{{ post.project.description|striptags|truncatechars:300 }}</p>
                     {% endif %}
 
