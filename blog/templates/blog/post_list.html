@@ -18,10 +18,10 @@
                         <h2 class="fs-1 post-header color-y">{{ post.title|upper }}</h2>
                     </a>
 
-                    {% if post.project %}
-                        <p class="lh-lg">{{ post.project.description|striptags|truncatechars:300 }}</p>
-                    {% else %}
+                    {% if post.abstract %}
                         <p class="lh-lg">{{ post.abstract|striptags|truncatechars:300 }}</p>
+                    {% else %}
+                        <p class="lh-lg">{{ post.project.description|striptags|truncatechars:300 }}</p>
                     {% endif %}
 
                 </div>

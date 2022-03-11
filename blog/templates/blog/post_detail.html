@@ -10,11 +10,18 @@
                 <h1 class="mt-1 font-weight-bold color-y display-3" id="blogdetailtitle">{{ post.title|upper }}</h1>
             </div>
 
-            {% if post.project %}
-
+            {% if post.abstract %}
+                <div class="px-xl-5 px-4 py-2">
+                    <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.abstract|safe }}</p>
+                </div>
+            {% else %}
                 <div class="px-xl-5 px-4 py-2">
                     <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.project.description|safe }}</p>
                 </div>
+            {% endif %}
+                
+
+            {% if post.project %}
 
                 {% if post.project.image %}
                     {% if post.project.url_production %}
@@ -44,12 +51,8 @@
 
             {% else %}
                 <div class="px-xl-5 px-4 py-2">
-                    <p class="post-body lead lh-lg p-xl-4 p-3 m-0 abstract my-muted rounded">{{ post.abstract|safe }}</p>
-                </div>
-                <div class="px-xl-5 px-4 py-2">
                     <img class="img-fluid rounded" src="{{ post.image.url }}" alt="Blog banner image">
                 </div>
-
             {% endif %}
 
             <div class="px-xl-5 px-4 pt-0">
