@@ -114,3 +114,15 @@ textarea {
 .color-y {
     color: #e6cc48;
 }
+
+.text-popper:hover {
+    text-shadow: 0px 0px 10px #e78e36;
+}
+
+.popover-header {
+    background-color: #202124;
+}
+
+.light-grey-bg {
+    background-color: #3a3a3a;
+}

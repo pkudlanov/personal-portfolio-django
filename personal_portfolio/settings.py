@@ -186,6 +186,19 @@ MARKDOWNIFY = {
             'h4',
             'h5',
             'h6',
-        ]
+            'span',
+        ],
+        "WHITELIST_ATTRS": [
+            'class',
+            'tabindex',
+            'role',
+            'data-bs-toggle',
+            'data-bs-trigger',
+            'title',
+            'data-bs-content',
+            'data-url-post',
+            'rel',
+            'target',
+        ],
     }
 }
