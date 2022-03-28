@@ -1,9 +1,12 @@
 from django.db import models
-# from blog.models import Category
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=255)
+    active_popper = models.BooleanField(default=False)
+    summary = models.TextField(max_length=320, default='Working on it...')
+    post = models.ForeignKey("blog.Post", on_delete=models.CASCADE, blank=True, null=True)
+    url_post = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
