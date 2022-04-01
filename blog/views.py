@@ -20,14 +20,30 @@ class DetailPost(generic.DetailView):
         # Add an html popper element for each tag to the dictionary
         for tag in Tag.objects.all():
             if tag.active_popper:
-                tags[tag.name] = '<span class="text-popper color-o" tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="' + tag.name + '" data-bs-content="' + tag.summary + '" data-url-post="' + tag.url_post + '">' + tag.name + '</span>'
+                tags[tag.id] = {
+                    'length': len(tag.name.split()),
+                    'name': tag.name, 
+                    'html_element': '<span class="text-popper color-o" tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="' + tag.name + '" data-bs-content="' + tag.summary + '" data-url-post="' + tag.url_post + '">' + tag.name + '</span>'
+                }
 
         # Working context decleration
         post_body = context['post'].body
 
+        # Replace all 2 word long tags with unique id so if they include another tag thats 1 word long they wont get affected by that tag
+        for k, v in tags.items():
+            if v['length'] > 1:
+                dollar_k_id = '$$' + str(k)
+                post_body = post_body.replace(v['name'], dollar_k_id)
+
+        for k, v in tags.items():
+            if v['length'] <= 1:
+                dollar_k_id = '$$' + str(k)
+                post_body = post_body.replace(v['name'], dollar_k_id)
+
         # Replace each instance of the tags from the dictionary in the body of the post with popper element
         for k, v in tags.items():
-            post_body = post_body.replace(k, v)
+            dollar_k = '$$' + str(k)
+            post_body = post_body.replace(dollar_k, v['html_element'])
 
         # Set context equal to new updated context (working context)
         context['post'].body = post_body
