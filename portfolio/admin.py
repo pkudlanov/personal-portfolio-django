@@ -10,5 +10,9 @@ class ProjectAdmin(admin.ModelAdmin):
     }
 
 
+class TagAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
+
+
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(Tag)
+admin.site.register(Tag, TagAdmin)
