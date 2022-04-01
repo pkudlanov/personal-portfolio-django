@@ -2,6 +2,8 @@ from django.views import generic
 from .models import Post
 from portfolio.models import Tag
 
+import re
+
 
 class AllPosts(generic.ListView):
     model = Post
@@ -21,7 +23,8 @@ class DetailPost(generic.DetailView):
         for tag in Tag.objects.all():
             if tag.active_popper:
                 tags[tag.id] = {
-                    'length': len(tag.name.split()),
+                    # 'length': len(tag.name.split()),
+                    'length': len(re.split(' |/', tag.name)),
                     'name': tag.name, 
                     'html_element': '<span class="text-popper color-o" tabindex="0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="' + tag.name + '" data-bs-content="' + tag.summary + '" data-url-post="' + tag.url_post + '">' + tag.name + '</span>'
                 }
@@ -33,12 +36,14 @@ class DetailPost(generic.DetailView):
         for k, v in tags.items():
             if v['length'] > 1:
                 dollar_k_id = '$$' + str(k)
-                post_body = post_body.replace(v['name'], dollar_k_id)
+                compiled = re.compile(re.escape(v['name']), re.IGNORECASE)
+                post_body = compiled.sub(dollar_k_id, post_body)
 
         for k, v in tags.items():
             if v['length'] <= 1:
                 dollar_k_id = '$$' + str(k)
-                post_body = post_body.replace(v['name'], dollar_k_id)
+                compiled = re.compile(re.escape(v['name']), re.IGNORECASE)
+                post_body = compiled.sub(dollar_k_id, post_body)
 
         # Replace each instance of the tags from the dictionary in the body of the post with popper element
         for k, v in tags.items():
