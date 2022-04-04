@@ -35,19 +35,24 @@ class DetailPost(generic.DetailView):
         # Replace all 2 word long tags with unique id so if they include another tag thats 1 word long they wont get affected by that tag
         for k, v in tags.items():
             if v['length'] > 1:
-                dollar_k_id = '$$' + str(k)
-                compiled = re.compile(re.escape(v['name']), re.IGNORECASE)
-                post_body = compiled.sub(dollar_k_id, post_body)
+                padded_id = str(k).zfill(4)
+                dollar_k_id = '$$' + padded_id
+                s = v['name']
+
+                post_body = re.sub(r'\b%s\b' % s,  dollar_k_id, post_body, flags=re.IGNORECASE)
 
         for k, v in tags.items():
             if v['length'] <= 1:
-                dollar_k_id = '$$' + str(k)
-                compiled = re.compile(re.escape(v['name']), re.IGNORECASE)
-                post_body = compiled.sub(dollar_k_id, post_body)
+                padded_id = str(k).zfill(4)
+                dollar_k_id = '$$' + padded_id
+                s = v['name']
+
+                post_body = re.sub(r'\b%s\b' % s,  dollar_k_id, post_body, flags=re.IGNORECASE)
 
         # Replace each instance of the tags from the dictionary in the body of the post with popper element
         for k, v in tags.items():
-            dollar_k = '$$' + str(k)
+            padded_id = str(k).zfill(4)
+            dollar_k = '$$' + padded_id
             post_body = post_body.replace(dollar_k, v['html_element'])
 
         # Set context equal to new updated context (working context)
