@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from portfolio.models import Project
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -21,6 +22,10 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, blank=True)
+    slug = models.SlugField(null=True)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'slug': self.slug})

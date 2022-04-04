@@ -15,7 +15,7 @@
             <div class="post row">
 
                 <div class="post-body-container col-10">
-                    <a href="{% url 'blog:detail' post.id %}" class="link-secondary text-decoration-none">
+                    <a href="{% url 'blog:detail' post.slug %}" class="link-secondary text-decoration-none">
                         <h2 class="fs-1 post-header color-y">{{ post.title|upper }}</h2>
                     </a>
 

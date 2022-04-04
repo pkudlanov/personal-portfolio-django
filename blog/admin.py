@@ -6,6 +6,7 @@ from .models import Post, Category
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('date',)
+    prepopulated_fields = {'slug': ('title',)}
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
         models.TextField: {'widget': Textarea(attrs={'rows':15, 'cols':100})},
