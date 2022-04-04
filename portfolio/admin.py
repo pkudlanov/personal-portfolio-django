@@ -12,9 +12,8 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class TagAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display_links = ('link',)
-    list_display = ('name', 'active_popper', 'id', 'link',)
-    list_editable =('name', 'active_popper',)
+    list_display = ('name', 'active_popper', 'id',)
+    list_editable =('active_popper',)
 
 
 admin.site.register(Project, ProjectAdmin)

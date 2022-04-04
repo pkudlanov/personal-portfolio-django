@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Tag(models.Model):
-    link = 'Edit'
     name = models.CharField(max_length=255)
     active_popper = models.BooleanField(default=False)
     summary = models.TextField(max_length=320, default='Working on it...')
