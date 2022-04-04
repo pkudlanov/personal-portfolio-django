@@ -10,6 +10,8 @@ class PostAdmin(admin.ModelAdmin):
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
         models.TextField: {'widget': Textarea(attrs={'rows':15, 'cols':100})},
     }
+    list_display = ('title', 'project', 'date', 'active',)
+    list_editable = ('active',)
 
 
 admin.site.register(Post, PostAdmin)

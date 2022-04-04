@@ -11,6 +11,7 @@
     <div class="post-container">
         <div class="post-line row"></div>
         {% for post in post_list %}
+        {% if post.active %}
             <div class="post row">
 
                 <div class="post-body-container col-10">
@@ -34,7 +35,8 @@
                     </div>
                 </div>
 
-            </div>
+            </div> 
+        {% endif %}
         {% endfor %}
     </div>
 

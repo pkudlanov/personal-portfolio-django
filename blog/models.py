@@ -11,6 +11,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    active = models.BooleanField(default=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=100)
     date = models.DateField(auto_now=True)
