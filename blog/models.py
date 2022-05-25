@@ -29,3 +29,14 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'slug': self.slug})
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=64)
+    email = models.EmailField(max_length=64)
+    comment = models.TextField()
+
+    def __str__(self):
+        return self.name + ': ' + self.comment[:64] + '...'
