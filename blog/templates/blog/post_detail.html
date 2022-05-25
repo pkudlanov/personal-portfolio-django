@@ -2,7 +2,7 @@
 {% load static markdownify %}
 
 {% block blog_content %}
-    <div class="blog-detail row vh-100">
+    <div class="blog-detail row">
 
         <div class="container col-md-10 col px-1 px-sm-2 px-md-3 px-lg-4 pt-5 pb-3">
 
@@ -76,4 +76,188 @@
         </div>
 
     </div>
+
+    <!-- Comment Section -->
+    <div class="post-line row text-light"></div>
+    
+    <div class="row">
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4" id="comment-section">
+            <div class="post-header text-center px-xl-5 px-4 pb-4">
+                <h2 class="mt-1 font-weight-bold color-y display-4">Comments</h2>
+            </div>
+            <!-- <h1 class="mt-1 font-weight-bold color-y">Comments</h1> -->
+            <form>
+                <div class="row g-2 px-4">
+                    <div class="col-md-6">
+                        <input class="form-control input-bg text-light border-0" type="text" placeholder="Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control input-bg text-light border-0" type="text" placeholder="E-Mail">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control input-bg text-light border-0" type="textarea" placeholder="Type comment here..." style="height: 100px;">
+                    </div>
+                </div>
+                <div class="row my-3 px-4 justify-content-end">
+                    <div class="form-actions col-md-6 align-self-end">
+                        <button class="btn rounded col-12 color-y" type="submit">Comment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="cbg-darker col-md-2 d-md-block d-none text-center"></div>
+    </div>
+
+    <div class="post-line row text-light"></div>
+
+    <!-- comment 1 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Pavlik</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio cupiditate eos laudantium blanditiis nostrum velit aspernatur deleniti voluptatum saepe inventore obcaecati illum dicta harum ab sint minus architecto, consequuntur rerum.</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
+    <!-- comment 2 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Peter Dantes</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">Excuse me??!!!! What were you thinking??!!!!</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
+    <!-- comment 3 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Pavlik</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">You think you're smarter then everyone else genious?</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
+    <!-- comment 4 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Peter Dantes</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">I am as smart as it gets Pavlik!!!!</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
+    <!-- comment 5 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Pavlik</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">HAH!!!! You wish!!!!!</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
+    <!-- comment 6 -->
+    <div class="post row">
+
+        <div class="comment-body-container col-md-10 px-1 px-sm-2 px-md-3 px-lg-4">
+            <div class="d-flex justify-content-between px-xl-5 px-4">
+                <div class="fs-3 post-header color-y">Peter Dantes</div>
+                <div class="fs-3 post-header color-y fst-italic">Apr 1, 2022 • <span class="fs-5"> 12:34 am</span></div>
+            </div>
+
+            <hr class="bg-light mt-0 mb-2 mx-xl-5 mx-4"/>
+
+            <p class="lh-lg px-xl-5 px-4">Nah, man thats reality.</p>
+
+        </div>
+
+        <div class="position-relative cbg-darker col-md-2 text-center d-md-block d-none">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h3 class="my-0 lh-1 fs-5">APR</h3>
+                <h2 class="my-0 lh-1 fs-1 post-header color-y">01</h2>
+                <h3 class="my-0 lh-1 fs-5">2022</h3>
+            </div>
+        </div>
+
+    </div> 
+
 {% endblock blog_content %}
