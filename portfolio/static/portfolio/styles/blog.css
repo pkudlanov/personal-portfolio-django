@@ -38,6 +38,11 @@
 
 #blog .post-day {
     background-color: rgb(30, 30, 30);
+    padding-bottom: 14em;
+}
+
+#blog .cbg-darker {
+    background-color: rgb(30, 30, 30);
 }
 
 #blog .date-container {

@@ -13,3 +13,43 @@
 .my-rounded {
     border-radius: .6em;
 }
+
+#comment-section .padder {
+    padding-top: 6vh;
+}
+
+#comment-section .input-bg {
+    background-color: #3a3a3a;
+}
+
+#comment-section button {
+    border: 1px solid #e6cc48;
+}
+
+#comment-section button:hover {
+    background-color: #f9d522;
+    color: #202124;
+    transition: .6s;
+}
+
+#comment-section .is-invalid {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#blog .comment-body-container {
+    padding: 1em 0em;
+}
+
+@media (min-width: 576px) {
+    #blog .comment-body-container {
+        padding: 1.4em 0em;
+    }
+}
+
+@media (min-width: 992px) {
+    #blog .comment-body-container {
+        padding: 1.8em 0em;
+    }
+}
