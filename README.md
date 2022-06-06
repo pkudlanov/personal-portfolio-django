@@ -69,3 +69,5 @@ Personal portfolio site based off of python/django. Built it after taking a few 
   - Setting them up as background images.
 - [Changing image src depending on screen size](https://stackoverflow.com/questions/30460681/changing-image-src-depending-on-screen-size)
   - I ended up setting up the svg's as background images to be able to get the specific webpage width breakpoints as media queries.
+- [How to add a form in a Django detail class based view](https://stackoverflow.com/questions/45659986/django-implementing-a-form-within-a-generic-detailview)
+  - This was the main refrence I used to setup a comment form within the detail view.
