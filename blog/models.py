@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from portfolio.models import Project
 from django.urls import reverse
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -15,7 +16,7 @@ class Post(models.Model):
     active = models.BooleanField(default=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=100)
-    date = models.DateField(auto_now=True)
+    date = models.DateField(default=timezone.now, editable=True)
     abstract = models.TextField(max_length=500, blank=True)
     image = models.ImageField(upload_to='portfolio/images/', blank=True)
     body = models.TextField()
